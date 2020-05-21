@@ -18,4 +18,4 @@
   
 **Add more than one counter component into your `AppComponent` and notice how each one has its own state.**  
   
-![Counter](./6e7465722e706e67.png)
+![Counter](./counter.png)
