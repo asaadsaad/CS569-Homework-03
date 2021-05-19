@@ -1,5 +1,8 @@
-# CS569-Homework-04
+# CS569 Homework 03
 ## Angular Components Communication - Inputs/Outpus
+## Write in a new markdown file `hw3-question1.md` the answer of the following questions:
+Read the documentaion and name all Angular lifecycle hooks? and summurize when each one of them is triggered.
+  
 ## Exercise
 1. Create a new Angular application from CLI.
 2. From the CLI, create a flat component class Counter that has one property `counterValue=0`, with inline template and style.
