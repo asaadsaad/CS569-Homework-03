@@ -1,24 +1,24 @@
 # CS569 Homework 03
 ## Angular Components Communication - Inputs/Outpus
 ## Write in a new markdown file `hw3-question1.md` the answer of the following questions:
-Read the documentaion and name all Angular lifecycle hooks? and summurize when each one of them is triggered.
+Read the documentaion and name all Angular component lifecycle hooks? and summurize when each one of them is triggered.
   
 ## Exercise
 1. Create a new Angular application from CLI.
-2. From the CLI, create a flat component class Counter that has one property `counterValue=0`, with inline template and style.
-3. The component template should have two buttons and variable bound to the `counterValue` property, when the user clicks on `"-"` or `"+"` buttons the `counterValue` should decrease/increase and the user must see the change.
-4. Use this component in `AppComponent` and test if everything is working properly.
+2. From the CLI, create a component `Counter` that has one property `counterLocalValue=0`, with inline template and style.
+3. Display the `Counter` component as a direct child to `AppComponent`.
+4. The `Counter` component template should have two buttons and variable bound to the `counterLocalValue` property, when the user clicks on `"-"` or `"+"` buttons the `counterLocalValue` should decrease/increase.
+
   
-**Update the `Counter` Component:**  
-1. Create an `Input` for a property counter, so if the parent component sets its value we will change `counterValue`.
-2. Create an `Output` counterChange, that emits the current value at all times so the parent component can read the value of `counterValue`.
-3. Update your `"-"` and `"+"` methods to reflect the change of `counterValue` to counter.
+**Receive the count initial value from the parent component + emit any changes back to the parent component:**  
+1. In `Counter` Component: Create an `Input` to accept the initial value of `counterLocalValue`.
+2. In `Counter` Component: Create an `Output` that emits any updates of `counterLocalValue` to the parent component. 
+3. In `Counter` Component: Update your `"-"` and `"+"` methods to emit the change of `counterLocalValue` to any listener.
+4. In `AppComponent` Component: Pass an initial value for the `Counter` component.
+5. In `AppComponent` Component: Listen to any changes emitted by the `Counter` component and log the change in the console.
   
-**Update the `AppComponent`:**  
-1. Create a property `ChildCounterValue` and bind/pass this to your `Counter` component `Input`.
-2. Listen to any change of `counterChange` and reflect the change to `ChildCounterValue`.
-3. Bind `ChildCounterValue` in the Template and verify it works
-  
-**Add more than one counter component into your `AppComponent` and notice how each one has its own state.**  
-  
+The expected use of the `Counter` component is as follows:
+```html
+<Counter [init]="counterValue" (countChange)="handleChange($event)"></Counter>
+```
 ![Counter](./counter.png)
