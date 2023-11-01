@@ -1,6 +1,9 @@
 # CS569 Homework 03
 ## In a new markdown file `hw3-question1.md`:
-Summarize when each Angular lifecycle hook is triggered.
+* What is the first lifecycle hook that reads an `Input` property value?
+* What causes the `ngOnChanges` lifecycle hook to trigger?
+* What decorator is used to access a template variable?
+* What is the first lifecycle hook that reads a template variable value?
   
 ## Coding Exercise
 1. Create a new Angular application from CLI.
