@@ -14,6 +14,6 @@
   
 The expected use of the `Counter` component is as follows:
 ```html
-<Counter [count]="counterValue" (countChange)="handleChange($event)"></Counter>
+<app-counter [count]="initialValue" (countChange)="handleChange($event)" />
 ```
 ![Counter](./counter.png)
